@@ -7,14 +7,14 @@ class CartsController < ApplicationController
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, +1)
 
-    redirect_back fallback_location: root_path
+    redirect_to :back
   end
 
   def remove_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, -1)
 
-    redirect_back fallback_location: root_path
+    redirect_to :back
   end
 
   private
